@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const {Schema } = mongoose
 const samples = require('../samplaPlant')
 
-// mongoose.connect('mongodb://localhost:27017/sprout')
+// mongoose.connect('mongodb+srv://user:user@cluster0.amj1z.mongodb.net/sprout?retryWrites=true&w=majority')
 // .then(()=>{
 //     console.log('Connected to database')
 // })
@@ -66,6 +66,7 @@ const plantSchema = new Schema({
 
 const Plant = mongoose.model('Plant', plantSchema)
 
+// Plant.deleteMany({}).then(d=>{console.log(d)}).catch(e=>{console.log(e)})
 // Plant.insertMany(samples).then(d=>{console.log(d)}).catch(e=>{console.log(e)})
 
 module.exports = Plant

@@ -4,7 +4,7 @@ if (process.env.NODE_ENV !== "production") {
 
 const express = require('express')
 const app = express()
-const port = 8000 || process.env.PORT
+const port = process.env.PORT || 8000  
 const path = require('path')
 
 const session = require('express-session')
