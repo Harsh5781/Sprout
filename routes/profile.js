@@ -11,7 +11,7 @@ const auth = require('../utils/auth')
 router.route('/')
 .get(auth, async (req, res)=>{
     const user = await User.findById(req.user.id)
-    res.send(user)
+    res.json(user)
 })
 
 // My blogs
@@ -37,7 +37,7 @@ router.route('/myblogs/:blogId')
         return res.status(404).send("Blog not found")
     }
     const blog = await Blog.findById(id)
-    res.send(blog)
+    res.json(blog)
 })
 .delete(auth, async (req, res)=>{
     const user = await User.findById(req.user.id).populate('blogs')
@@ -51,14 +51,14 @@ router.route('/myblogs/:blogId')
         }
     }
     if(!id){
-        return res.status(404).send("Blog not found")
+        return res.status(404).json({"message" : "Blog not found"})
     }
     user.blogs = user.blogs.filter((elem)=>{
         return elem.id !== id
     })
     await user.save()
     const blog = await Blog.findByIdAndDelete(id)
-    res.status(204).redirect('/profile/myblogs')
+    res.status(204).json({"message": "Deleted successfully"})
 })
 
 // Saved blogs
@@ -81,10 +81,10 @@ router.route('/savedblogs/:blogId')
         }
     }
     if(!id){
-        return res.status(404).send("Blog not found")
+        return res.status(404).json({"message": "Blog not found"})
     }
     const blog = await Blog.findById(id)
-    res.send(blog)
+    res.json(blog)
 })
 .delete(auth, async (req, res)=>{
     const user = await User.findById(req.user.id).populate('savedBlogs')
@@ -98,13 +98,13 @@ router.route('/savedblogs/:blogId')
         }
     }
     if(!id){
-        return res.status(404).send("Blog not found")
+        return res.status(404).json({"message" :"Blog not found"})
     }
     user.savedBlogs = user.savedBlogs.filter((elem)=>{
         return elem.id !== id
     })
     await user.save()
-    res.status(204).redirect('/profile/savedblogs')
+    res.status(204).json({"message": "Deleted successfully"})
 })
 
 
@@ -128,10 +128,10 @@ router.route('/mygarden/:plantId')
         }
     }
     if(!id){
-        return res.status(404).send("Plant not found")
+        return res.status(404).json({"message":"Plant not found"})
     }
     const plant = await Garden.findById(id)
-    res.send(plant)
+    res.json(plant)
 })
 .delete(auth, async (req, res)=>{
     const user = await User.findById(req.user.id).populate('plants')
@@ -145,14 +145,14 @@ router.route('/mygarden/:plantId')
         }
     }
     if(!id){
-        return res.status(404).send("Plant not found")
+        return res.status(404).json({"message":"Plant not found"})
     }
     user.plants = user.plants.filter((elem)=>{
         return elem.id !== id
     })
     await user.save()
     const plant = await Garden.findByIdAndDelete(id)
-    res.status(204).redirect('/profile/mygarden')
+    res.status(204).json({"message":"Deleted successfully"})
 })
 
 module.exports = router

@@ -20,18 +20,18 @@ router.route('/')
     }
     catch(err){
         console.log(err)
-        res.send(err)
+        res.json(err)
     }
 })
 
 router.route('/:id')
 .get(async (req, res)=>{
     const question = await Question.findById(req.params.id).populate('user').populate('comments')
-    res.send(question)
+    res.json(question)
 })
 .delete(auth, async (req, res)=>{
     const question = await Question.findByIdAndDelete(req.params.id)
-    res.redirect('/question')
+    res.json({"message": "Deleted successfully"})
 })
 
 

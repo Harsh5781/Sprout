@@ -20,7 +20,7 @@ router.route('/:id')
     }
     catch(err){
         console.log(err)
-        res.send(err)
+        res.json(err)
     }
 })
 
