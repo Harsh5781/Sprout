@@ -1,7 +1,7 @@
 const plant = [{
     "pid": "red mini rose",
-    "name": "rose",
-    "display_pid": "Red mini rose",
+    "name": "Rose",
+    "display_pid": "Rosa rubiginosa",
     "alias": "red mini rose",
     "max_light_mmol": 8700,
     "min_light_mmol": 4200,
@@ -15,11 +15,12 @@ const plant = [{
     "min_soil_moist": 16,
     "max_soil_ec": 2000,
     "min_soil_ec": 425,
-    "image_url": "https://objectstorage.ap-sydney-1.oraclecloud.com/n/sdyd5yr3jypo/b/plant-img/o/red%20mini%20rose.jpg"
+    "image_url": "https://objectstorage.ap-sydney-1.oraclecloud.com/n/sdyd5yr3jypo/b/plant-img/o/red%20mini%20rose.jpg",
+    "description": "Rose, (genus Rosa), genus of some 100 species of perennial shrubs in the rose family (Rosaceae). Roses are native primarily to the temperate regions of the Northern Hemisphere. Many roses are cultivated for their beautiful flowers, which range in colour from white through various tones of yellow and pink to dark crimson and maroon, and most have a delightful fragrance, which varies according to the variety and to climatic conditions. Most rose species are native to Asia, with smaller numbers being native to North America and a few to Europe and northwest Africa. Roses from different regions of the world hybridize readily, giving rise to types that overlap the parental forms, and making it difficult to determine basic species. Fewer than 10 species, mostly native to Asia, were involved in the crossbreeding that ultimately produced todays many types of garden roses."
 },
 {
     "pid": "ipomoea purpurea",
-    "name": "morning glory",
+    "name": "Morning glory",
     "display_pid": "Ipomoea purpurea",
     "alias": "ipomoea purpurea",
     "max_light_mmol": 6000,
@@ -34,12 +35,13 @@ const plant = [{
     "min_soil_moist": 15,
     "max_soil_ec": 2000,
     "min_soil_ec": 350,
-    "image_url": "https://objectstorage.ap-sydney-1.oraclecloud.com/n/sdyd5yr3jypo/b/plant-img/o/ipomoea%20purpurea.jpg"
+    "image_url": "https://objectstorage.ap-sydney-1.oraclecloud.com/n/sdyd5yr3jypo/b/plant-img/o/ipomoea%20purpurea.jpg",
+    "description": "morning glory, any of several herbaceous twining vines or shrubs in the genus Ipomoea (family Convolvulaceae). Several species of morning glories are cultivated for their showy trumpet-shaped flowers and attractive leaves. Common morning glory, an annual vine that bears heart-shaped leaves and purple, pink, or white flowers about 7 cm (3 inches) across, has become a troublesome weed in parts of southeastern North America. It is grown as an ornamental in many places. Heavenly blue morning glory a twining perennial vine, usually cultivated as a garden annual—bears clusters of blue to purplish, sometimes white, flowers, 12 cm (4.7 inches) across, among heart-shaped leaves. It is native to tropical America. This vine bears seeds containing the alkaloids d-lysergic and d-isolysergic acids (similar to LSD), and the seeds are traditionally used among Mexico's Zapotec peoples for ceremonial and curative purposes."
 },
 {
     "pid": "aloe vera",
-    "name": "aloe vera",
-    "display_pid": "Aloe vera",
+    "name": "Aloe vera",
+    "display_pid": "Aloe barbadensis miller",
     "alias": "aloe vera",
     "max_light_mmol": 6400,
     "min_light_mmol": 3200,
@@ -53,12 +55,13 @@ const plant = [{
     "min_soil_moist": 7,
     "max_soil_ec": 1000,
     "min_soil_ec": 300,
-    "image_url": "https://objectstorage.ap-sydney-1.oraclecloud.com/n/sdyd5yr3jypo/b/plant-img/o/aloe%20vera.jpg"
+    "image_url": "https://objectstorage.ap-sydney-1.oraclecloud.com/n/sdyd5yr3jypo/b/plant-img/o/aloe%20vera.jpg",
+    "description":"Aloe vera, sometimes described as a “wonder plant,” is a short-stemmed shrub. Aloe is a genus that contains more than 500 species of flowering succulent plants. Many Aloes occur naturally in North Africa. The leaves of Aloe vera are succulent, erect, and form a dense rosette. Many uses are made of the gel obtained from the plant's leaves."
 },
 {
     "pid": "hibiscus rosa sinensis 'cheerleader clear yellow'",
-    "name": "hibiscus",
-    "display_pid": "Hibiscus rosa sinensis 'Cheerleader Clear Yellow'",
+    "name": "Hibiscus",
+    "display_pid": "Hibiscus rosa sinensis",
     "alias": "hawaiian hibiscus",
     "max_light_mmol": 7100,
     "min_light_mmol": 3400,
@@ -72,12 +75,13 @@ const plant = [{
     "min_soil_moist": 15,
     "max_soil_ec": 2000,
     "min_soil_ec": 350,
-    "image_url": "https://objectstorage.ap-sydney-1.oraclecloud.com/n/sdyd5yr3jypo/b/plant-img/o/hibiscus%20rosa%20sinensis%20%27cheerleader%20clear%20yellow%27.jpg"
+    "image_url": "https://objectstorage.ap-sydney-1.oraclecloud.com/n/sdyd5yr3jypo/b/plant-img/o/hibiscus%20rosa%20sinensis%20%27cheerleader%20clear%20yellow%27.jpg",
+    "description":"hibiscus, (genus Hibiscus), genus of numerous species of herbs, shrubs, and trees in the mallow family (Malvaceae) that are native to warm temperate and tropical regions. Several are cultivated as ornamentals for their showy flowers, and a number are useful as fibre plants. The leaves are often lobed and may be smooth or covered in trichomes (plant hairs). The flowers can be borne singly or in clusters, and the flowers of many species last only a single day. An epicalyx (whorl of leaflike bracts that surrounds the sepals) is particularly common, and the stamens are typically fused into a tube. Members of the genus characteristically have spiny pollen, and their fruits are capsules. The tropical Chinese hibiscus, or China rose (Hibiscus rosa-sinensis), which may reach a height of 4.5 metres (15 feet), rarely exceeds 2 metres (6.5 feet) in cultivation. It is grown for its large somewhat bell-shaped blossoms. Cultivated varieties have red, white, yellow, or orange flowers. The East African hibiscus, a drooping shrub with deeply lobed red petals, is often grown in hanging baskets indoors."
 },
 {
     "pid": "epipremnum aureum 'golden pothos'",
-    "name": "money plant",
-    "display_pid": "Epipremnum aureum 'Golden Pothos'",
+    "name": "Money plant",
+    "display_pid": "Epipremnum aureum",
     "alias": "epipremnum aureum",
     "max_light_mmol": 3200,
     "min_light_mmol": 700,
@@ -91,11 +95,12 @@ const plant = [{
     "min_soil_moist": 15,
     "max_soil_ec": 2000,
     "min_soil_ec": 350,
-    "image_url": "https://objectstorage.ap-sydney-1.oraclecloud.com/n/sdyd5yr3jypo/b/plant-img/o/epipremnum%20aureum%20%27golden%20pothos%27.jpg"
+    "image_url": "https://objectstorage.ap-sydney-1.oraclecloud.com/n/sdyd5yr3jypo/b/plant-img/o/epipremnum%20aureum%20%27golden%20pothos%27.jpg",
+    "description":"As per popular belief, a Money Plant is a money-making machine! By placing a money plant at home, one can gain financial prosperity. But some sect also says that this plant has to be robbed from someone's place to bring that great financial luck to the self. The other name of this plant is Devil's Ivy. In many households this plant is found . some keep it for that “good luck” factor while some simply want a low-maintenance house plant that would keep the air clean and some other people use it to magnify the great looks of the home. Money Plant demands an adequate amount of water in its initial days. So, when you have got a fresh new Money Plant . don't forget to water it well but again it should not be fully soaked in water. You have to decide where you want to grow this plant, i.e, in soil or in water. It has no problem in sustaining both in soil or water but don't make the mistake of replacing it from soil to water and vice-versa. The Money Plants growing in water would have softer leaves as compared to the ones growing in soil."
 },
 {
     "pid": "daphne jasminea",
-    "name": "jasmine",
+    "name": "Jasmine",
     "display_pid": "Daphne jasminea",
     "alias": "daphne jasminea",
     "max_light_mmol": 3000,
@@ -110,12 +115,13 @@ const plant = [{
     "min_soil_moist": 15,
     "max_soil_ec": 2000,
     "min_soil_ec": 350,
-    "image_url": "https://objectstorage.ap-sydney-1.oraclecloud.com/n/sdyd5yr3jypo/b/plant-img/o/daphne%20jasminea.jpg"
+    "image_url": "https://objectstorage.ap-sydney-1.oraclecloud.com/n/sdyd5yr3jypo/b/plant-img/o/daphne%20jasminea.jpg",
+    "description":"jasmine, (genus Jasminum), also spelled jessamine, genus of about 200 species of fragrant-flowered shrubs and vines of the olive family (Oleaceae). The plants are native to tropical and to some temperate areas of the Old World. Several are cultivated as ornamentals. Most true jasmines have climbing branches without tendrils. The white, yellow, or rarely pink flowers are tubular with a flaring, lobed, pinwheel-like form; some double-flowered varieties have been developed. The leaves can be evergreen or deciduous and usually are composed of two or more leaflets, although some species have simple leaves. The fruit in most species is a two-lobed black berry."
 },
 {
     "pid": "champagne mini rose",
-    "name": "rose",
-    "display_pid": "Champagne mini rose",
+    "name": "Rose",
+    "display_pid": "Rosa chinensis var. minima",
     "alias": "champagne mini rose",
     "max_light_mmol": 8700,
     "min_light_mmol": 4200,
@@ -129,11 +135,12 @@ const plant = [{
     "min_soil_moist": 16,
     "max_soil_ec": 2000,
     "min_soil_ec": 425,
-    "image_url": "https://objectstorage.ap-sydney-1.oraclecloud.com/n/sdyd5yr3jypo/b/plant-img/o/champagne%20mini%20rose.jpg"
+    "image_url": "https://objectstorage.ap-sydney-1.oraclecloud.com/n/sdyd5yr3jypo/b/plant-img/o/champagne%20mini%20rose.jpg",
+    "description": "Rose, (genus Rosa), genus of some 100 species of perennial shrubs in the rose family (Rosaceae). Roses are native primarily to the temperate regions of the Northern Hemisphere. Many roses are cultivated for their beautiful flowers, which range in colour from white through various tones of yellow and pink to dark crimson and maroon, and most have a delightful fragrance, which varies according to the variety and to climatic conditions. Most rose species are native to Asia, with smaller numbers being native to North America and a few to Europe and northwest Africa. Roses from different regions of the world hybridize readily, giving rise to types that overlap the parental forms, and making it difficult to determine basic species. Fewer than 10 species, mostly native to Asia, were involved in the crossbreeding that ultimately produced todays many types of garden roses."
 },
 {
     "pid": "tagetes lucida",
-    "name": "marigold",
+    "name": "Marigold",
     "display_pid": "Tagetes lucida",
     "alias": "tagetes lucida",
     "max_light_mmol": 6400,
@@ -148,11 +155,12 @@ const plant = [{
     "min_soil_moist": 20,
     "max_soil_ec": 2000,
     "min_soil_ec": 350,
-    "image_url": "https://objectstorage.ap-sydney-1.oraclecloud.com/n/sdyd5yr3jypo/b/plant-img/o/tagetes%20lucida.jpg"
+    "image_url": "https://objectstorage.ap-sydney-1.oraclecloud.com/n/sdyd5yr3jypo/b/plant-img/o/tagetes%20lucida.jpg",
+    "description":"Marigolds (Tagetes species) are easy to grow, economical, bloom reliably all summer, and infrequently have insect and disease problems. They are a popular warm-season annual with bright, long-lasting blooms. Plant height varies with the cultivar. Marigolds cover a full range of sizes from about 6 inches to 3 feet tall. Marigolds are used for mass planting, edging, borders, cut flowers, and container plantings. Most varieties bloom from early summer until hard frost in late fall. Marigolds require full sun and grow best in well-drained, loamy soil. Prepare flower beds by incorporating organic matter and cultivating the soil to 6 inches deep. For best results, amend the soil prior to planting according to the results of a soil test. Marigolds prefer a slightly acidic soil. However, at a soil pH below 5.5, marigold leaves may develop a bronze speckled appearance due to manganese or iron toxicity."
 },
 {
     "pid": "tagetes ground control",
-    "name": "marigold",
+    "name": "Marigold",
     "display_pid": "Tagetes Ground Control",
     "alias": "tagetes ground control",
     "max_light_mmol": 6400,
@@ -167,7 +175,68 @@ const plant = [{
     "min_soil_moist": 20,
     "max_soil_ec": 2000,
     "min_soil_ec": 350,
-    "image_url": "https://objectstorage.ap-sydney-1.oraclecloud.com/n/sdyd5yr3jypo/b/plant-img/o/tagetes%20ground%20control.jpg"
+    "image_url": "https://objectstorage.ap-sydney-1.oraclecloud.com/n/sdyd5yr3jypo/b/plant-img/o/tagetes%20ground%20control.jpg",
+    "description":"Marigolds (Tagetes species) are easy to grow, economical, bloom reliably all summer, and infrequently have insect and disease problems. They are a popular warm-season annual with bright, long-lasting blooms. Plant height varies with the cultivar. Marigolds cover a full range of sizes from about 6 inches to 3 feet tall. Marigolds are used for mass planting, edging, borders, cut flowers, and container plantings. Most varieties bloom from early summer until hard frost in late fall. Marigolds require full sun and grow best in well-drained, loamy soil. Prepare flower beds by incorporating organic matter and cultivating the soil to 6 inches deep. For best results, amend the soil prior to planting according to the results of a soil test. Marigolds prefer a slightly acidic soil. However, at a soil pH below 5.5, marigold leaves may develop a bronze speckled appearance due to manganese or iron toxicity."
+},
+{
+    "pid": "dahlia 'bermuda beach'",
+    "name": "Dahlia",
+    "display_pid": "Dahlia 'Bermuda Beach'",
+    "alias": "dahlia bermuda beach",
+    "max_light_mmol": 5400,
+    "min_light_mmol": 2700,
+    "max_light_lux": 35000,
+    "min_light_lux": 3000,
+    "max_temp": 35,
+    "min_temp": 5,
+    "max_env_humid": 80,
+    "min_env_humid": 15,
+    "max_soil_moist": 60,
+    "min_soil_moist": 7,
+    "max_soil_ec": 2000,
+    "min_soil_ec": 350,
+    "image_url": "https://opb-img.plantbook.io/dahlia%20%27bermuda%20beach%27.jpg",
+    "description":"dahlia, (genus Dahlia), genus of about 40 species of flowering plants in the aster family (Asteraceae), native to the higher elevations of Mexico and Central America. About six of the species in the Dahlia genus have been bred for cultivation as ornamental flowers and are popular in the floral industry and in gardens. The thousands of dahlia cultivars are classed into a variety of types, including single, double, pompon, cactus, waterlily, peony-flowered, and dinnerplate dahlias. Dahlias are tuberous perennials, and most have simple leaves that are segmented and toothed or cut. The compound flowers may be white, yellow, red, or purple in colour. Wild species of dahlias have both disk and ray flowers in the flowering heads, but many varieties of ornamentals such as the common garden dahlia (D. bipinnata) have shortened ray flowers. Dahlias grow well in most garden soils. They begin flowering late in the summer and continue flowering until interrupted by frost in the autumn. The dahlia was first introduced into Great Britain from Spain in 1798. Many of the countless varieties of dahlias, including double-flowered forms, were subsequently developed in Britain and elsewhere from the species D. variabilis and D. coccinea."
+},
+{
+    "pid": "dahlia 'pebble beach'",
+    "name": "Dahlia",
+    "display_pid": "Dahlia 'Pebble Beach'",
+    "alias": "dahlia pebble beach",
+    "max_light_mmol": 5400,
+    "min_light_mmol": 2700,
+    "max_light_lux": 35000,
+    "min_light_lux": 3000,
+    "max_temp": 35,
+    "min_temp": 5,
+    "max_env_humid": 80,
+    "min_env_humid": 15,
+    "max_soil_moist": 60,
+    "min_soil_moist": 7,
+    "max_soil_ec": 2000,
+    "min_soil_ec": 350,
+    "image_url": "https://opb-img.plantbook.io/dahlia%20%27pebble%20beach%27.jpg",
+    "description":"dahlia, (genus Dahlia), genus of about 40 species of flowering plants in the aster family (Asteraceae), native to the higher elevations of Mexico and Central America. About six of the species in the Dahlia genus have been bred for cultivation as ornamental flowers and are popular in the floral industry and in gardens. The thousands of dahlia cultivars are classed into a variety of types, including single, double, pompon, cactus, waterlily, peony-flowered, and dinnerplate dahlias. Dahlias are tuberous perennials, and most have simple leaves that are segmented and toothed or cut. The compound flowers may be white, yellow, red, or purple in colour. Wild species of dahlias have both disk and ray flowers in the flowering heads, but many varieties of ornamentals such as the common garden dahlia (D. bipinnata) have shortened ray flowers. Dahlias grow well in most garden soils. They begin flowering late in the summer and continue flowering until interrupted by frost in the autumn. The dahlia was first introduced into Great Britain from Spain in 1798. Many of the countless varieties of dahlias, including double-flowered forms, were subsequently developed in Britain and elsewhere from the species D. variabilis and D. coccinea."
+},
+{
+    "pid": "dahlia 'laguna beach'",
+    "name": "Dahlia",
+    "display_pid": "Dahlia 'Laguna Beach'",
+    "alias": "dahlia laguna beach",
+    "max_light_mmol": 5400,
+    "min_light_mmol": 2700,
+    "max_light_lux": 35000,
+    "min_light_lux": 3000,
+    "max_temp": 35,
+    "min_temp": 5,
+    "max_env_humid": 80,
+    "min_env_humid": 15,
+    "max_soil_moist": 60,
+    "min_soil_moist": 7,
+    "max_soil_ec": 2000,
+    "min_soil_ec": 350,
+    "image_url": "https://opb-img.plantbook.io/dahlia%20%27laguna%20beach%27.jpg",
+    "description":"dahlia, (genus Dahlia), genus of about 40 species of flowering plants in the aster family (Asteraceae), native to the higher elevations of Mexico and Central America. About six of the species in the Dahlia genus have been bred for cultivation as ornamental flowers and are popular in the floral industry and in gardens. The thousands of dahlia cultivars are classed into a variety of types, including single, double, pompon, cactus, waterlily, peony-flowered, and dinnerplate dahlias. Dahlias are tuberous perennials, and most have simple leaves that are segmented and toothed or cut. The compound flowers may be white, yellow, red, or purple in colour. Wild species of dahlias have both disk and ray flowers in the flowering heads, but many varieties of ornamentals such as the common garden dahlia (D. bipinnata) have shortened ray flowers. Dahlias grow well in most garden soils. They begin flowering late in the summer and continue flowering until interrupted by frost in the autumn. The dahlia was first introduced into Great Britain from Spain in 1798. Many of the countless varieties of dahlias, including double-flowered forms, were subsequently developed in Britain and elsewhere from the species D. variabilis and D. coccinea."
 },
 
 ]

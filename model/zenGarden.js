@@ -52,6 +52,9 @@ const gardenSchema= new Schema({
     },
     image_url:{
         type: String
+    },
+    description:{
+        type: String
     }
 })
 
