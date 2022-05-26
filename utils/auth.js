@@ -13,7 +13,7 @@ const auth = async function(req, res, next){
     }
     catch(err){
         console.log(err)
-        res.status(401).send(err)
+        res.status(401).json({"message":err})
     }
 }
 module.exports = auth
