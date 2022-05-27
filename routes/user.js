@@ -18,7 +18,7 @@ router.route('/register')
 
 router.route('/login')
 .post(checkPass, (req, res)=>{
-    res.json({"message":"Login successful"})
+    res.status(200).json({"message":"Login successful"})
 })
 
 router.route('/logout')

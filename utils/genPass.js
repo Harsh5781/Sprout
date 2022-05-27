@@ -34,6 +34,7 @@ const checkPass = async function(req, res, next){
     try{
         const {email, password} = req.body
         const user = await User.findOne({email})
+        console.log(user)
         if(!email)
         {
             return res.status(404).json({"message":'Incorrect user details'})
@@ -52,6 +53,7 @@ const checkPass = async function(req, res, next){
         next()
     }
     catch(err){
+        console.log(err)
         res.status(400).json({"message":err})
     }
 }
