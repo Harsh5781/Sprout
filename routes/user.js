@@ -13,7 +13,12 @@ router.route('/register')
     res.send('hello')
 })
 .post(genHash, async (req, res)=>{
-    res.status(200).json({"message":"Register successful"})
+    const user = req.user
+    console.log(user)
+    res.status(200).json({
+        "message":"Register successful",
+        "token":user
+    })
 })
 
 router.route('/login')

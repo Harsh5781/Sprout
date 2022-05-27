@@ -14,6 +14,7 @@ const genHash = async function(req, res, next){
         const token = getToken(user.id)
         user.tokens = user.tokens.concat({token})
         await user.save()
+        req.user = user
         res.cookie('jwt', token, {
             expires: new Date(Date.now() + 1000*60*60*24*3),
             httpOnly: true
@@ -21,7 +22,9 @@ const genHash = async function(req, res, next){
         next()
     }
     catch(err){
-        res.status(400).json({"message":"Something went wrong"})
+        res.status(400).json({
+            "message":"Something went wrong"
+        })
     }
 }
 
@@ -41,6 +44,7 @@ const checkPass = async function(req, res, next){
         const token = getToken(user.id)
         user.tokens = user.tokens.concat({token})
         await user.save()
+        req.user = user
         res.cookie('jwt', token, {
             expires: new Date(Date.now() + 1000*60*60*24*3),
             httpOnly: true
