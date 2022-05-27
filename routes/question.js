@@ -27,11 +27,11 @@ router.route('/')
 router.route('/:id')
 .get(async (req, res)=>{
     const question = await Question.findById(req.params.id).populate('user').populate('comments')
-    res.json(question)
+    res.status(200).json(question)
 })
 .delete(auth, async (req, res)=>{
     const question = await Question.findByIdAndDelete(req.params.id)
-    res.json({"message": "Deleted successfully"})
+    res.status(200).json("Deleted successfully")
 })
 
 

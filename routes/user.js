@@ -13,7 +13,7 @@ router.route('/register')
     res.send('hello')
 })
 .post(genHash, async (req, res)=>{
-    res.json({"message":"Register successful"})
+    res.status(200).json({"message":"Register successful"})
 })
 
 router.route('/login')
@@ -28,7 +28,7 @@ router.route('/logout')
         return elem.token !== req.token
     })
     req.user.save()
-    res.json({"message":"Logout successful"})
+    res.status(200).json({"message":"Logout successful"})
 })
 
 
