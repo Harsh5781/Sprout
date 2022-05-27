@@ -17,13 +17,17 @@ router.route('/register')
     console.log(user)
     res.status(200).json({
         "message":"Register successful",
-        "token":user
+        "token":user.username
     })
 })
 
 router.route('/login')
 .post(checkPass, (req, res)=>{
-    res.status(200).json({"message":"Login successful"})
+    const user = req.user
+    res.status(200).json({
+        "message":"Login successful",
+        "token":user.username
+    })
 })
 
 router.route('/logout')
