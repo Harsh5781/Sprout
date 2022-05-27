@@ -8,7 +8,7 @@ const auth = require('../utils/auth')
 router.route('/')
 .get(async (req, res)=>{
     const blogs = await Blog.find().populate('user')
-    res.json(blogs)
+    res.status(200).json(blogs)
 })
 .post(auth, async (req,res)=>{
     const {title, body} = req.body
@@ -17,20 +17,20 @@ router.route('/')
     user.blogs.push(blog.id)
     await blog.save()
     await user.save()
-    res.json(blog)
+    res.status(200).json(blog)
 })
 
 router.route('/:id')
 .get(async (req,res)=>{
     const blog = await Blog.findById(req.params.id).populate('user')
-    res.json(blog)
+    res.status(200).json(blog)
 })
 .post(auth, async (req,res)=>{
     const blog = await Blog.findById(req.params.id)
     const user = await User.findById(req.user.id)
     user.savedBlogs.push(blog.id)
     await user.save()
-    res.json(user)
+    res.status(200).json(user)
 })
 
 module.exports = router

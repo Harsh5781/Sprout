@@ -13,8 +13,8 @@ router.route('/')
         const plants = await Plant.find({
             name:{$regex: search, $options: '$i'}
         })
-        
-        res.json(plants)
+
+        res.status(200).json(plants)
     }
     catch(err){
         console.log(err)
@@ -26,7 +26,7 @@ router.route('/:id')
 .get(async (req, res)=>{
     const {id} = req.params
     const plant = await Plant.findById(id)
-    res.json(plant)
+    res.status(200).json(plant)
 })
 .post(auth, async (req, res)=>{
     try{
