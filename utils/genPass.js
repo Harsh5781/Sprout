@@ -8,11 +8,7 @@ const {getToken} = require('./getToken')
 
 const genHash = async function(req, res, next){
     try{
-        const {password, email, confirmPass, username} = req.body
-        if(confirmPass!==password)
-        {
-            return res.status(400).json({"message":"Password not match"})
-        }
+        const {password, email, username} = req.body
         const pass = await bcrypt.hash(password, 12)
         const user = new User({email,  password: pass, username})
         const token = getToken(user.id)
