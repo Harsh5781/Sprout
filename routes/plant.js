@@ -37,7 +37,7 @@ router.route('/:id')
         garden.isNew = true
         await garden.save()
         await user.save()
-        res.status(200).json(user)
+        res.status(200).json({"message":"Plant saved"})
     }
     catch(err){
         res.status(400).json("Something wrong")
