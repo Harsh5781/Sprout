@@ -4,7 +4,7 @@ const {verifyToken} = require('./getToken')
 
 const auth = async function(req, res, next){
     try{
-    const token = req.body
+    const token = req.body.cookie
     // const token = cookie.slice(4)
     const verify = verifyToken(token)
     const user = await User.findOne({id: verify})
@@ -14,7 +14,7 @@ const auth = async function(req, res, next){
     }
     catch(err){
         console.log(err)
-        res.status(401).json({"message":"Something went wrong"})
+        res.status(401).json({"message":"Not authenticated"})
     }
 }
 module.exports = auth
