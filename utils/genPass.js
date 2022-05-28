@@ -17,7 +17,7 @@ const genHash = async function(req, res, next){
         req.user = user
         res.cookie('jwt', token, {
             expires: new Date(Date.now() + 1000*60*60*24*3),
-            httpOnly: true
+            httpOnly: false
         })
         next()
     }
@@ -47,7 +47,7 @@ const checkPass = async function(req, res, next){
         req.user = user
         res.cookie('jwt', token, {
             expires: new Date(Date.now() + 1000*60*60*24*3),
-            httpOnly: true
+            httpOnly: false
         })
         next()
     }
