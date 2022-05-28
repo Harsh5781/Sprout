@@ -4,7 +4,7 @@ const {verifyToken} = require('./getToken')
 
 const auth = async function(req, res, next){
     try{
-    const token = req.body.cookie
+    const token = req.cookies.jwt
     // const token = cookie.slice(4)
     const verify = verifyToken(token)
     const user = await User.findOne({id: verify})
