@@ -110,7 +110,7 @@ router.route('/savedblogs/:blogId')
 
 // My Garden
 router.route('/mygarden')
-.get(auth, async (req, res)=>{
+.post(auth, async (req, res)=>{
     const user = await User.findById(req.user.id).populate('plants')
     res.status(200).json(user.plants)
 })
