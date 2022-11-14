@@ -31,6 +31,9 @@ router.route('/login')
 })
 
 router.route('/logout')
+.get(auth, async(req, res)=>{
+    res.json("Hello")
+})
 .post(auth, async (req, res)=>{
     try{
     res.clearCookie('jwt')
