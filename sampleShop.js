@@ -10,21 +10,21 @@ const shop = [{
     "price":"1500",
     "description":"Tool used for gardening",
     "category":"Garden",
-    "image":"1000",
+    "image":"https://m.media-amazon.com/images/I/81OBOfUWZ-L._SL1500_.jpg",
 },
 {
     "name":"Morphin",
     "price":"1000",
     "description":"Medicine used for gardening",
     "category":"Medicine",
-    "image":"500",
+    "image":"https://upload.wikimedia.org/wikipedia/commons/8/88/Morphin_1%25_1_ml_amp.jpg",
 },
 {
     "name":"Snake plant",
     "price":"800",
     "description":"Snake plant which is indoor plant",
     "category":"Indoor",
-    "image":"500",
+    "image":"https://cdn.shopify.com/s/files/1/0047/9730/0847/products/nurserylive-plants-sansevieria-trifasciata-hahnii-snake-plant-plant-16969295855756.jpg?v=1634228043",
 },
 ]
 

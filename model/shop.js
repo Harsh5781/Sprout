@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const {Schema} = mongoose;
 const samples = require('../sampleShop')
 
-// mongoose.connect('mongodb://localhost:27017/sprout')
+// mongoose.connect(process.env.DB_URL)
 // .then(()=>{
 //     console.log('Connected to database')
 // })
