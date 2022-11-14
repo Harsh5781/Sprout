@@ -17,7 +17,7 @@ router.route('/register')
     console.log(user)
     res.status(200).json({
         "message":"Register successful",
-        "token":user.email
+        "token":req.token
     })
 })
 
@@ -26,7 +26,7 @@ router.route('/login')
     const user = req.user
     res.status(200).json({
         "message":"Login successful",
-        "token":user.email
+        "token":req.token
     })
 })
 

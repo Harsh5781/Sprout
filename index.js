@@ -14,7 +14,8 @@ const cookie = require('cookie-parser')
 const mongoose = require('mongoose')
 
 // Connecting to the database
-const dbURL = process.env.DB_URL || 'mongodb://localhost:27017/sprout'
+const dbURL =  'mongodb://localhost:27017/sprout'
+// process.env.DB_URL ||
 mongoose.connect(dbURL)
 .then(()=>{
     console.log('Connected to the database')
@@ -30,6 +31,8 @@ const profile = require('./routes/profile')
 const question = require('./routes/question')
 const comment = require('./routes/comment')
 const blog = require('./routes/blog')
+const shop = require('./routes/shop')
+const order = require('./routes/order')
 
 
 
@@ -60,6 +63,8 @@ app.use('/profile', profile)
 app.use('/question', question)
 app.use('/comment', comment)
 app.use('/blog', blog)
+app.use('/shop', shop)
+app.use('/order', order)
 
 app.get('/', (req, res)=>{
     res.send('Hello hi')
