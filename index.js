@@ -14,7 +14,7 @@ const cookie = require('cookie-parser')
 const mongoose = require('mongoose')
 
 // Connecting to the database
-const dbURL = 'mongodb://localhost:27017/sprout'
+const dbURL = process.env.DB_URL || 'mongodb://localhost:27017/sprout'
 // process.env.DB_URL ||
 mongoose.connect(dbURL)
 .then(()=>{
