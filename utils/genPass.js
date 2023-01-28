@@ -8,9 +8,9 @@ const {getToken} = require('./getToken')
 
 const genHash = async function(req, res, next){
     try{
-        const {password, email, username} = req.body
+        const {password, email, username, isAdmin} = req.body
         const pass = await bcrypt.hash(password, 12)
-        const user = new User({email,  password: pass, username})
+        const user = new User({email,  password: pass, username, isAdmin})
         const token = getToken(user.id)
         user.tokens = user.tokens.concat({token})
         await user.save()
@@ -23,6 +23,7 @@ const genHash = async function(req, res, next){
         next()
     }
     catch(err){
+        console.log(err)
         res.status(400).json({
             "message":"Something went wrong"
         })
