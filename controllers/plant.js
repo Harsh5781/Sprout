@@ -9,7 +9,9 @@ exports.getPlantByName = async (req, res)=>{
         const plants = await Plant.find({
             name:{$regex: search, $options: '$i'}
         })
-
+        res.setHeader('name', 'harshit')
+        console.log(req.headers)
+        console.log(res.getHeaders())
         res.status(200).json(plants)
     }
     catch(err){
