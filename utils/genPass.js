@@ -16,10 +16,7 @@ const genHash = async function(req, res, next){
         await user.save()
         req.user = user
         req.token = token
-        res.cookie('jwt', token, {
-            expires: new Date(Date.now() + 1000*60*60*24*3),
-            httpOnly: false
-        })
+        res.setHeader('Auth-token', token)
         next()
     }
     catch(err){
@@ -34,7 +31,6 @@ const checkPass = async function(req, res, next){
     try{
         const {email, password} = req.body
         const user = await User.findOne({email})
-        console.log(user)
         if(!email)
         {
             return res.status(404).json({"message":'Incorrect user details'})
@@ -48,10 +44,7 @@ const checkPass = async function(req, res, next){
         await user.save()
         req.user = user
         req.token = token
-        res.cookie('jwt', token, {
-            expires: new Date(Date.now() + 1000*60*60*24*3),
-            httpOnly: false
-        })
+        res.setHeader('Auth-token', token)
         next()
     }
     catch(err){
