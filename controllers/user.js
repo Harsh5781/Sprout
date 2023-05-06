@@ -23,8 +23,8 @@ exports.loginUser = (req, res)=>{
 }
 
 exports.logoutUser = async (req, res)=>{
-    req.user.tokens = req.user.tokens.filter((elem)=>{
-        return elem.token !== req.token
+    req.user.tokens = req.user.tokens.filter((token)=>{
+        return token !== req.token
     })
     req.user.save()
     res.removeHeader('Auth-token')

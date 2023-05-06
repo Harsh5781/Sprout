@@ -2,6 +2,9 @@ const mongoose = require('mongoose')
 const {Schema}= mongoose
 
 const gardenSchema= new Schema({
+    plantId: {
+        type: String
+    },
     pid: {
         type: String
     },
@@ -58,4 +61,5 @@ const gardenSchema= new Schema({
     }
 })
 
-module.exports = new mongoose.model('Garden', gardenSchema)
+const Garden = mongoose.model('Garden', gardenSchema)
+module.exports = Garden

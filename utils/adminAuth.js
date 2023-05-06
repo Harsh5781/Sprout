@@ -4,8 +4,8 @@ const {verifyToken} = require('./getToken')
 const adminAuth = async (req, res, next)=>{
     try{
         const token = req.headers['auth-token']
-        const id = verifyToken(token)
-        const user = await User.findOne(id)
+        const verify = verifyToken(token)
+        const user = await User.findById(verify.id)
         if(!user.isAdmin){
             res.status(401).json({"message" : "Admin not authorized"})
         }

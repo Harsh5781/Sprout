@@ -12,9 +12,10 @@ const bcrypt = require('bcrypt')
 const cookie = require('cookie-parser')
 
 const mongoose = require('mongoose')
+const dbConfig = require('./config/dbConfig')
 
 // Connecting to the database
-const dbURL = process.env.DB_URL || 'mongodb://localhost:27017/sprout'
+const dbURL = dbConfig.dbUrl
 // process.env.DB_URL ||
 mongoose.connect(dbURL)
 .then(()=>{
@@ -33,7 +34,7 @@ const comment = require('./routes/comment')
 const blog = require('./routes/blog')
 const shop = require('./routes/shop')
 const order = require('./routes/order')
-
+const cart = require('./routes/cart')
 
 
 // Setting up session
@@ -65,6 +66,7 @@ app.use('/comment', comment)
 app.use('/blog', blog)
 app.use('/shop', shop)
 app.use('/order', order)
+app.use('/cart', cart)
 
 app.get('/', (req, res)=>{
     res.send('Hello hi')

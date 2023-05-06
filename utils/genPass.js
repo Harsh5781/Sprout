@@ -1,7 +1,5 @@
 const User = require('../model/userSchema')
 const bcrypt = require('bcrypt')
-const jwt = require('jsonwebtoken')
-const cookie = require('cookie-parser')
 const {getToken} = require('./getToken')
 
 // Setting up bcrypt
@@ -12,7 +10,7 @@ const genHash = async function(req, res, next){
         const pass = await bcrypt.hash(password, 12)
         const user = new User({email,  password: pass, username, isAdmin})
         const token = getToken(user.id)
-        user.tokens = user.tokens.concat({token})
+        user.tokens.push(token)
         await user.save()
         req.user = user
         req.token = token
@@ -40,7 +38,7 @@ const checkPass = async function(req, res, next){
             return res.status(403).json({"message":'Incorrect user details'})
         }
         const token = getToken(user.id)
-        user.tokens = user.tokens.concat({token})
+        user.tokens.push(token)
         await user.save()
         req.user = user
         req.token = token

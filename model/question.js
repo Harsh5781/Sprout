@@ -1,7 +1,5 @@
 const mongoose = require('mongoose')
 const {Schema} = mongoose
-const User = require('./userSchema')
-const Comment = require('./comment')
 
 const questionSchema = new Schema({
     title:{
@@ -26,4 +24,5 @@ const questionSchema = new Schema({
     }
 })
 
-module.exports = new mongoose.model('Question', questionSchema)
+const Question = mongoose.model('Question', questionSchema)
+module.exports = Question

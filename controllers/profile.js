@@ -99,6 +99,7 @@ exports.deleteSavedBlogById = async (req, res)=>{
     res.status(200).json({"message": "Deleted successfully"})
 }
 
+//Garden
 exports.getAllPlants = async (req, res)=>{
     const user = await User.findById(req.user.id).populate('plants')
     res.status(200).json(user.plants)
@@ -141,5 +142,5 @@ exports.deletePlantsById  = async (req, res)=>{
     })
     await user.save()
     const plant = await Garden.findByIdAndDelete(id)
-    res.status(204).json({"message":"Deleted successfully"})
+    res.status(200).json({"message":"Deleted successfully"})
 }

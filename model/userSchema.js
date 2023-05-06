@@ -1,7 +1,5 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
-const Garden = require('./zenGarden')
-const Blog = require('./blog')
 
 const userSchema =new Schema({
     username:{
@@ -24,9 +22,7 @@ const userSchema =new Schema({
         required:true
     },
     tokens:[{
-        token:{
-            type:String
-        }
+        type:String
     }],
     plants:[{
         type: Schema.Types.ObjectId,
@@ -40,7 +36,11 @@ const userSchema =new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Blog'
     }],
-
+    cart : {
+        type : Schema.Types.ObjectId,
+        ref : 'Cart'
+    }
 })
 
-module.exports = new mongoose.model('User', userSchema)
+const User = mongoose.model('User', userSchema)
+module.exports = User
