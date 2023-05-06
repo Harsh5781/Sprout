@@ -26,7 +26,7 @@ const userSchema =new Schema({
     }],
     plants:[{
         type: Schema.Types.ObjectId,
-        ref: 'Garden'
+        ref: 'Plant'
     }],
     blogs:[{
         type: Schema.Types.ObjectId,

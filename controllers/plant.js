@@ -1,7 +1,5 @@
 const Plant = require('../model/plants')
-const Garden = require('../model/zenGarden')
 const User = require('../model/userSchema')
-const auth = require('../utils/auth')
 
 exports.getPlantByName = async (req, res)=>{
     try{
@@ -27,14 +25,18 @@ exports.addPlantById = async (req, res)=>{
     try{
         const user = await User.findById(req.user.id)
         const plant = await Plant.findById(req.params.id)
-        const garden = new Garden(plant)
-        user.plants.push(garden.id)
-        garden.isNew = true
-        await garden.save()
+        if(plant == null){
+            throw "Plant not found"
+        }
+        if(user.plants.includes(plant.id)){
+            throw "Plant already in garden"
+        }
+        user.plants.push(plant.id)
         await user.save()
         res.status(200).json({"message":"Plant saved"})
     }
     catch(err){
-        res.status(400).json("Something wrong")
+        console.log(err)
+        res.status(400).json({"message" : err})
     }
 }
