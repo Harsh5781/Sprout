@@ -1,5 +1,4 @@
 const Plant = require('../model/plants')
-const Garden = require('../model/zenGarden')
 const Blog = require('../model/blog')
 const User = require('../model/userSchema')
 
@@ -99,47 +98,53 @@ exports.deleteSavedBlogById = async (req, res)=>{
     res.status(200).json({"message": "Deleted successfully"})
 }
 
+//Garden
 exports.getAllPlants = async (req, res)=>{
     const user = await User.findById(req.user.id).populate('plants')
     res.status(200).json(user.plants)
 }
 
 exports.getPlantsById  = async (req, res)=>{
-    const user = await User.findById(req.user.id).populate('plants')
-    let id 
-    for(let plant of user.plants)
-    {
-        if(plant.id === req.params.plantId)
-        {
-            id = plant.id
-            break
+    try{
+        const user = await User.findById(req.user.id).populate('plants')
+        let id 
+        user.plants.forEach(plant =>{
+            if(req.params.plantId == plant.id){
+                id = plant.id
+            }
+        })
+        if(id == null){
+            throw "Plant not found"
         }
+        const plant = await Plant.findById(id)
+        res.status(200).json(plant)
     }
-    if(!id){
-        return res.status(404).json({"message":"Plant not found"})
+    catch(error){
+        console.log(error)
+        res.status(404).json({"message": error})
     }
-    const plant = await Garden.findById(id)
-    res.status(200).json(plant)
 }
 
 exports.deletePlantsById  = async (req, res)=>{
-    const user = await User.findById(req.user.id).populate('plants')
-    let id 
-    for(let plant of user.plants)
-    {
-        if(plant.id === req.params.plantId)
-        {
-            id = plant.id
-            break
+    try{
+        const user = await User.findById(req.user.id).populate('plants')
+        let id 
+        user.plants.forEach(plant =>{
+            if(req.params.plantId == plant.id){
+                id = plant.id
+            }
+        })
+        if(id == null){
+            throw "Plant not found"
         }
+        user.plants = user.plants.filter(plant=>{
+            return plant.id !== id
+        })
+        await user.save()
+        res.status(200).json({"message":"Deleted successfully"})
     }
-    if(!id){
-        return res.status(404).json({"message":"Plant not found"})
+    catch(error){
+        console.log(error)
+        res.status(404).json({"message" : error})
     }
-    user.plants = user.plants.filter((elem)=>{
-        return elem.id !== id
-    })
-    await user.save()
-    const plant = await Garden.findByIdAndDelete(id)
-    res.status(204).json({"message":"Deleted successfully"})
 }
