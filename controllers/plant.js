@@ -4,8 +4,9 @@ const User = require('../model/userSchema')
 exports.getPlantByName = async (req, res)=>{
     try{
         const search = req.query.name
+        const query = {name : search}
         const plants = await Plant.find({
-            name:{$regex: search, $options: '$i'}
+            name:{$regex: search, $options:"i"}
         })
         res.status(200).json(plants)
     }
