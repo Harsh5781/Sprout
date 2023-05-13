@@ -8,6 +8,9 @@ const shopController = require('../controllers/shop')
 router.route('/').
 get(shopController.getAllProducts)
 
+router.route('/search').
+get(shopController.searchProducts)
+
 router.route('/category/:category').
 get(shopController.getProductByCategory)
 

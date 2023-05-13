@@ -4,15 +4,17 @@ const User = require('../model/userSchema')
 exports.getPlantByName = async (req, res)=>{
     try{
         const search = req.query.name
-        const query = {name : search}
         const plants = await Plant.find({
             name:{$regex: search, $options:"i"}
         })
+        if(plants.length ==0){
+            throw "No plant found"
+        }
         res.status(200).json(plants)
     }
     catch(err){
         console.log(err)
-        res.status(400).json(err)
+        res.status(400).json({"message" : err})
     }
 }
 

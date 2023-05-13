@@ -48,3 +48,15 @@ exports.getProductByCategory = async (req, res)=>{
     }
 }
 
+exports.searchProducts = async (req, res)=>{
+    try {
+        const products = await Shop.find({name:{$regex : req.query.name, $options:'i'}})
+        if(products.length == 0){
+            throw "No item found"
+        }
+        res.status(200).json(products)
+    } catch (error) {
+        console.log(error)
+        res.status(400).json({"message" : error})
+    }
+}
