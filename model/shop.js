@@ -31,6 +31,10 @@ const shopSchema =  new Schema({
     image:{
         type:String,
         required:true
+    },
+    isFavourite:{
+        type:Boolean,
+        required : true
     }
 
 })
