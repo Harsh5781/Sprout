@@ -14,18 +14,22 @@ const itemSchema = new Schema({
         type : Number,
         required : true
     },
+    description : {
+        type : String,
+        required : true
+    },
     quantity : {
         type : Number,
         required : true,
         default : 0,
         min : 0 
     },
-    // totalPrice : {
-    //     type : Number,
-    //     default : ()=>{
-    //         return this.productPrice * this.quantity
-    //     }
-    // },
+    totalPrice : {
+        type : Number,
+        required: true,
+        default : 0,
+        min : 0,
+    },
     productImage:{
         type:String,
         required:true

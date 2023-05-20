@@ -24,7 +24,7 @@ exports.getCart = async (req, res)=>{
 
 exports.deleteCart = async (req, res)=>{
     try {
-        const cart = await Cart.findById({"_id":req.params.id})
+        const cart = await Cart.findById({"_id":req.params.cartId})
         if(cart == null){
             throw INVALID_CART_ID
         }
@@ -67,9 +67,14 @@ exports.addToCart = async (req, res)=>{
 
         if(item == null){
             console.log(item)
-            item = new Item({productId : product._id, productName : product.name, productPrice : product.price, productImage : product.image})
+            item = new Item({productId : product._id, 
+                productName : product.name, 
+                productPrice : product.price,
+                description : product.description, 
+                productImage : product.image})
         }
         item.quantity = item.quantity + 1
+        item.totalPrice = item.quantity * item.productPrice
         
         await item.save()
         if(cart == null){
@@ -80,6 +85,7 @@ exports.addToCart = async (req, res)=>{
         if(!isItemPresentInCart){
             cart.items.push(item)
         }
+        cart.price = setTotalPriceInCart(cart.items)
         await cart.save()
     
         res.status(201).json({"message":"Item added to cart successfully"})
@@ -102,8 +108,11 @@ exports.deleteItem = async (req, res)=>{
             throw ITEM_NOT_FOUND
         }
 
-        cart.items.splice(cart.items.indexOf(item), 1)
+        cart.items = cart.items.filter(item => {
+            return item.id != req.params.itemId
+        })
         await item.delete()
+        cart.price = setTotalPriceInCart(cart.items)
         await cart.save()
 
         res.status(200).json({"message" : "Item removed from cart successfully"})
@@ -115,13 +124,21 @@ exports.deleteItem = async (req, res)=>{
 
 exports.increseQuantityInCart = async (req, res)=>{
     try{
+        let cart = await Cart.findById(req.params.cartId).populate("items")
+        if(cart == null) {
+            throw INVALID_CART_ID
+        }
+
         let item = await Item.findById(req.params.itemId)
         if(item == null){
             throw ITEM_NOT_FOUND
         }
 
         item.quantity++
+        item.totalPrice = item.quantity * item.productPrice
         await item.save()
+        cart.price = cart.price + item.productPrice
+        await cart.save()
         res.status(200).json({"message" : "Item added to cart successfully"})
     }
     catch(error){
@@ -132,28 +149,40 @@ exports.increseQuantityInCart = async (req, res)=>{
 
 exports.decreaseQuantityInCart = async (req, res)=>{
     try {
+        const cart = await Cart.findById(req.params.cartId).populate('items')
+        if(cart == null){
+            throw INVALID_CART_ID
+        }
         let item = await Item.findById(req.params.itemId)
         if(item == null){
             throw ITEM_NOT_FOUND
         }
         
         item.quantity--
+        item.totalPrice = item.quantity * item.productPrice
         if(item.quantity == 0){
-            const cart = await Cart.findById(req.params.id).populate('items')
-            if(cart == null){
-                throw INVALID_CART_ID
-            }
-            cart.items.splice(cart.items.indexOf(item), 1)
+            cart.items = cart.items.filter(itemInCart => {
+                return itemInCart.id != req.params.itemId
+            })
             await item.delete()
-            await cart.save()
         }
         else{
             await item.save()
         }
+        cart.price = cart.price - item.productPrice
+        await cart.save()
         
         res.status(200).json({"message" : "Item removed from cart successfully"})
     } catch (error) {
         console.log(error)
         res.status(400).json({"message" : error})
     }
+}
+
+function setTotalPriceInCart(items) {
+    let totalPrice = 0;
+    items.forEach(item => {
+        totalPrice += item.totalPrice
+    });
+    return totalPrice
 }
