@@ -14,13 +14,13 @@ router.route('/product/:id')
 router.route('/:cartId/item/:itemId')
 .delete(auth, cartController.deleteItem)
 
-router.route('/:id/item/:itemId/increase')
+router.route('/:cartId/item/:itemId/increase')
 .post(auth, cartController.increseQuantityInCart)
 
-router.route('/:id/item/:itemId/decrease')
+router.route('/:cartId/item/:itemId/decrease')
 .delete(auth, cartController.decreaseQuantityInCart)
 
-router.route('/:id')
+router.route('/:cartId')
 .delete(auth, cartController.deleteCart)
 
 module.exports = router
